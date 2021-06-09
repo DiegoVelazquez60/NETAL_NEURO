@@ -1,0 +1,296 @@
+@font-face {
+    font-family: 'Pumpkin Pancakes';
+    src: url(../fonts/Pumpkin\ Pancakes.ttf);
+}
+
+@font-face {
+    font-family: 'Mayan';
+    src: url(../fonts/Mayan.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 15px;
+}
+
+body{
+    background-image: url(../images/halftone-yellow.png);
+}
+
+div.page_container{
+    display: none;
+}
+
+
+div.too_large{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.too_large p{
+    font-size: 8vmin;
+    text-align: center;
+}
+
+div.too_large img{
+    width: 30vmin
+}
+
+div.too_large p.too_large_width{
+    display: none;
+}
+
+@media screen and (min-aspect-ratio: 5/2) {
+    div.too_large p.too_large_height{
+        display: none;
+    }
+    
+    div.too_large p.too_large_width{
+        display: block;
+    }
+    
+}
+
+@media screen and (min-aspect-ratio: 2/5) and (max-aspect-ratio: 5/2){
+    body{
+        background-image: url(../images/background.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100vw 65vh;
+        overflow-x: hidden;
+    }
+
+    div.page_container{
+        display: block
+    }
+
+    div.too_large{
+        display: none;
+    }
+    
+    @media screen and (min-aspect-ratio: 1/1){
+        body{
+            background-size: 100vw 95vh;
+        } 
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6) and (max-aspect-ratio: 1/1){
+        body{
+            background-size: 100vw 75vh;
+        } 
+    }
+    
+    nav{
+        background-color: rgba(22,22,22,0.22);
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    nav section{
+        width: 45%;
+        margin: 0 5%;
+    }
+    
+    nav section ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100%;
+        place-items: center;
+    }
+    
+    nav section ul li{
+        list-style: none;
+        text-align: center;
+    }
+    
+    nav section ul li a{
+        text-decoration: none;
+        font-family: 'Mayan', sans-serif;
+        font-weight: 500;
+        color: #fff;
+        font-size: 1.25vmax;
+    }
+    
+    nav section ul li a:active, nav section ul li a:hover{
+        font-weight: 700;
+        text-decoration: underline;
+        color: #fff;
+        text-shadow: 0.2vmax 0.1vmax 0 rgb(35, 0, 163);
+    }
+    
+    header{
+        height: 55vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+    
+    @media screen and (min-aspect-ratio: 1/1){
+        header{
+            height: 85vh;
+            grid-template-columns: 6fr 4fr;
+            grid-template-rows: 1fr;
+        }
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6) and (max-aspect-ratio: 1/1){
+        header{
+            height: 65vh;
+            grid-template-columns: 6fr 4fr;
+            grid-template-rows: 1fr;
+        }
+    }
+    
+    @keyframes logo{
+        0% {opacity: 0; left:50vw;}
+        100% {opacity: 100%; left:0;}
+    }
+    
+    @keyframes logo2{
+        0% {opacity: 0; left:30vw;}
+        100% {opacity: 100%; left:0;}
+    }
+    
+    header section.animation_logo{
+        animation-name: logo;
+        animation-duration: 3s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        order: -1;
+        animation-iteration-count: 1;
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6){
+        header section.animation_logo{
+           order: 1;
+           animation-name: logo2;
+           animation-iteration-count: 1;
+        }
+    }
+    
+    header section.animation_logo h1{
+        font-family: 'Pumpkin Pancakes', sans-serif;
+        font-weight: 200;
+        font-size: 3.5vmin;
+        width: 60%;
+        text-align: center;
+        color: rgb(141, 0, 87);
+        text-shadow: 0.2vmax 0.1vmax 0 white;
+    }
+    
+    @media screen and (min-aspect-ratio: 1/1){
+        header section.animation_logo h1{
+            font-size: 2vmax;
+            text-shadow: 0.2vmax 0.1vmax 0 white;
+        }
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6) and (max-aspect-ratio: 1/1){
+        header section.animation_logo h1{
+            font-size: 3vmin;
+            width: 80%;
+            text-shadow: 0.2vmax 0.1vmax 0 white;
+        }
+    }
+    
+    header section.animation_logo img{
+        width: 35vmin;
+    }
+    
+    @media screen and (min-aspect-ratio: 1/1){
+        header section.animation_logo img{
+            width: 22.5vmax;
+        }
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6) and (max-aspect-ratio: 1/1){
+        header section.animation_logo img{
+            width: 35vmin;
+        }
+    }
+    
+    @keyframes message{
+        0% {opacity: 0; left:-50vh;}
+        100% {opacity: 100%; left:0;}
+    }
+
+    @keyframes message2{
+        0% {opacity: 0; top:30vh;}
+        100% {opacity: 100%; top:0;}
+    }
+    
+    header section.logo_message{
+        display: flex;
+        justify-content: center;
+    }
+    
+    header section.logo_message p.message{
+        width: 65%;
+        background-color: rgba(0, 13, 131, 0.5);
+        font-size: 3.5vmin;
+        text-align: center;
+        border-radius: 2vw;
+        animation-name: message;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+        position: relative;
+        color: #fff;
+        font-family: 'Mayan', sans-serif;
+    }
+    
+    @media screen and (min-aspect-ratio: 1/1){
+        header section.logo_message p.message{
+            width: 85%;
+            font-size: 3.55vw;
+            border-radius: 2vw;
+        }
+    }
+    
+    @media screen and (min-aspect-ratio: 4/6) and (max-aspect-ratio: 1/1){
+        header section.logo_message p.message{
+            width: 85%;
+            font-size: 3.55vw;
+            border-radius: 2vw;
+        }
+    }
+
+    @media screen and (min-aspect-ratio: 4/6) {
+        header section.logo_message p.message{
+            animation-name: message2;
+            animation-iteration-count: 1;
+        }
+    }
+    
+    main section{
+        height: 90vh;
+        border-top: solid 3px #fff;
+    }
+    
+    main section.main_1{
+        background-image: url(../images/halftone-yellow.png);
+    }
+    
+    main section.main_2{
+        background-image: url(../images/halftone-green.png);
+    }
+    
+    main section.main_3{
+        background-image: url(../images/halftone-pink.png);
+    }
+}
+
